@@ -1,0 +1,29 @@
+.nav{
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
+}
+
+.navMenuWrapper{
+	width:15em;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
+
+.navButtonsWrapper {
+	width: 15em;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
+
+.logoutButton{
+	width:5em;
+	height: 40px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+

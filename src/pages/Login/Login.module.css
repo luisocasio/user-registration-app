@@ -1,0 +1,14 @@
+.loginPageWrapper{
+	height: 100vh;
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+}
+
+.loginFormImage{
+	width:400px;
+	height: auto;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+}
