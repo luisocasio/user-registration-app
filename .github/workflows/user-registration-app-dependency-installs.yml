@@ -1,0 +1,7 @@
+name: user-registration-app-dependency-installs
+on: [push]
+jobs:
+  job-name:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Hello world"
