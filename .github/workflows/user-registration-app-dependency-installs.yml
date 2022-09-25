@@ -1,7 +1,7 @@
 name: Hello World Job
 on: [push]
 jobs:
-  job-name:
+  Hello-World:
     runs-on: ubuntu-latest
     steps:
       - run: echo "Hello world"
