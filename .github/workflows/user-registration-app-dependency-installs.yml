@@ -1,4 +1,4 @@
-name: user-registration-app-dependency-installs
+name: Hello World Job
 on: [push]
 jobs:
   job-name:
