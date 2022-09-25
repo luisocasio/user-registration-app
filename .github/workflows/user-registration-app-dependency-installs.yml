@@ -1,4 +1,4 @@
-name: Hello Job
+name: Hello Workflow
 on: [push]
 jobs:
   Hello-World:
