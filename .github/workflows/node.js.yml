@@ -3,12 +3,16 @@
 
 name: Node Workflow
 
+# Define events
 on:
+  # push event
   push:
     branches: [ "master" ]
+  # pr event  
   pull_request:
     branches: [ "master" ]
 
+# set of actions to execute
 jobs:
   build:
 
