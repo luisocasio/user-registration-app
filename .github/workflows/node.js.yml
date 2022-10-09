@@ -5,6 +5,7 @@ name: Build-Application
 
 # Define events
 on:
+#   workflow_dispatch: <---Set for manual deployments
   # push event
   push:
     branches: [ "master" ]
