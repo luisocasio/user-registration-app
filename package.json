@@ -2,7 +2,7 @@
   "name": "user-registration-app",
   "version": "1.0.0",
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --host",
     "build": "vite build",
     "preview": "vite preview"
   },
@@ -25,7 +25,7 @@
     "vite": "^3.0.0"
   },
   "engines": {
-    "npm": ">= 8.11.0",
-    "node": ">= 16.16.0"
+    "npm": ">= 8.19.2",
+    "node": ">= 18.10.0"
   }
 }
