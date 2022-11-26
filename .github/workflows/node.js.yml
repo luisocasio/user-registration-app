@@ -25,6 +25,7 @@ jobs:
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     steps:
+    - run: echo "Checking out repository..."
     # Checkout repo
     - uses: actions/checkout@v3
     # use specified node version from above matrix to install dependencies and run build script
@@ -33,5 +34,9 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
+    - run: echo "Getting ready to install dependencies..."    
     - run: npm ci
+    - run: echo "Dependencies installed."
+    - run: echo "Initializing build..."
     - run: npm run build
+    - run: echo "Build ran."
