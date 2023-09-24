@@ -2,9 +2,10 @@
   "name": "user-registration-app",
   "version": "1.0.0",
   "scripts": {
+    "start": "vite",
     "dev": "vite --host",
-    "build": "vite build",
-    "preview": "vite preview"
+    "build": "vite build ",
+    "preview": "vite preview --port 3001"
   },
   "dependencies": {
     "@ant-design/icons": "^4.7.0",
