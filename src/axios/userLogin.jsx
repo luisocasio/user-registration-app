@@ -2,7 +2,7 @@ import axiosInstance from "./axiosInstance";
 
 const userLogin = async (user) => {
   try {
-    const response = await axiosInstance({
+    await axiosInstance({
       url: "/user/login",
       method: "POST",
       data: user,

@@ -1,11 +1,10 @@
 import axios from "axios";
 
 const axiosInstance = axios.create({
-  baseURL: process.env.USER_REGISTRATION_SERVER,
+  baseURL: `http://localhost:8081`,
   headers: {
-    "Content-Type": "application/json",
-    "Access-Control-Allow-Methods": "*",
-    "Access-Control-Allow-Origin" : "*",
+    "Access-Control-Allow-Origin" : "*://*",
+    "Access-Control-Allow-Methods": "POST, GET, PUT",
   },
   withCredentials: true,
 });
