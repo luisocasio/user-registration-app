@@ -13,7 +13,6 @@
 }
 
 .navButtonsWrapper {
-	width: 15em;
 	display: flex;
 	justify-content: space-around;
 	align-items: center;
