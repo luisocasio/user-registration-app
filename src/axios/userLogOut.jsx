@@ -4,7 +4,7 @@ const userLogOut = async () => {
   try {
     await axiosInstance({ 
       url: "/user/logout", 
-      method: "DELETE",
+      method: "POST",
     });
   } catch (error) {
     console.error("Error: ", error);
