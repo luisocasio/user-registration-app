@@ -12,7 +12,13 @@ import { FiLogOut } from "react-icons/fi";
 
 const Nav = () => {
   const isUserLoggedIn = useSelector((state) => state.loggedIn.login);
-  console.log("isUserLoggedIn: ", isUserLoggedIn);
+
+  let name
+
+  if (isUserLoggedIn) {
+    const myName = localStorage.getItem("myName");
+    name = myName
+  }
 
   const dispatch = useDispatch();
 
@@ -24,8 +30,6 @@ const Nav = () => {
   useEffect(() => {
     let isMounted = true;
 
-    console.log("IsMounted");
-
     return () => console.log("unmounted");
   }, [isUserLoggedIn]);
 
@@ -34,40 +38,31 @@ const Nav = () => {
       <div className={styles.navMenuWrapper}>
         <NavMenu />
         <Button type="default">
-          <Link to="/">
-            Home
-          </Link>
+          <Link to="/">Home</Link>
         </Button>
       </div>
 
-      {!isUserLoggedIn &&
-        (
-          <div className={styles.navButtonsWrapper}>
-            <Button type="default">
-              <Link to="/register">
-                Register
-              </Link>
-            </Button>
-            |
-            <Button type="primary">
-              <Link to="/login">
-                Log in
-              </Link>
-            </Button>
-          </div>
-        )}
+      {!isUserLoggedIn && (
+        <div className={styles.navButtonsWrapper}>
+          <Button type="default">
+            <Link to="/register">Register</Link>
+          </Button>
+          |
+          <Button type="primary">
+            <Link to="/login">Log in</Link>
+          </Button>
+        </div>
+      )}
 
-      {isUserLoggedIn &&
-        (
-          <div className={styles.navButtonsWrapper}>
-            <h1>
-              welcome,
-            </h1>
-            <span className={styles.logoutButton} onClick={handleLogOut}>
-              <FiLogOut />
-            </span>
-          </div>
-        )}
+      {isUserLoggedIn && (
+        <div className={styles.navButtonsWrapper}>
+          <h1>welcome, {name}</h1> 
+
+          <span className={styles.logoutButton} onClick={handleLogOut}>
+            <FiLogOut />
+          </span>
+        </div>
+      )}
     </nav>
   );
 };
