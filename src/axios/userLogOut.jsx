@@ -6,6 +6,7 @@ const userLogOut = async () => {
       url: "/user/logout", 
       method: "POST",
     });
+    
   } catch (error) {
     console.error("Error: ", error);
   }

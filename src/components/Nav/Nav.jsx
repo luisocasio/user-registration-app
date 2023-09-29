@@ -11,15 +11,9 @@ import styles from "./Nav.module.css";
 import { FiLogOut } from "react-icons/fi";
 
 const Nav = () => {
-  const isUserLoggedIn = useSelector((state) => state.loggedIn.login);
-
-  let name
-
-  if (isUserLoggedIn) {
-    const myName = localStorage.getItem("myName");
-    name = myName
-  }
-
+  let isUserLoggedIn = useSelector((state) => state.loggedIn.login);
+  let name = localStorage.getItem("myName")
+  
   const dispatch = useDispatch();
 
   const handleLogOut = () => {
@@ -29,8 +23,17 @@ const Nav = () => {
 
   useEffect(() => {
     let isMounted = true;
+    console.log('isMounted', isMounted)
+    console.log("isUserLoggedIn:", isUserLoggedIn)
 
-    return () => console.log("unmounted");
+    if(name && isUserLoggedIn){
+      console.log("User logged in: ", name)
+    }
+
+
+    return () => {
+     console.log("Clean up")
+    }
   }, [isUserLoggedIn]);
 
   return (
@@ -54,7 +57,7 @@ const Nav = () => {
         </div>
       )}
 
-      {isUserLoggedIn && (
+      {name && isUserLoggedIn && (
         <div className={styles.navButtonsWrapper}>
           <h1>welcome, {name}</h1> 
 

@@ -15,7 +15,7 @@ const validateMessages = {
     range: "${label} must be between ${min} and ${max}",
   },
 };
-
+const name = localStorage.getItem("myName");
 const ProfileForm = () => {
   const onFinish = (values) => {
     console.log(values);
@@ -48,7 +48,7 @@ const ProfileForm = () => {
           width: "50%",
         }}
       >
-        <Input />
+      <input defaultValue={name} />
       </Form.Item>
       <Form.Item
         name={["user", "email"]}
