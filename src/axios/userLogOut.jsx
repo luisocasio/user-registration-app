@@ -6,7 +6,6 @@ const userLogOut = async () => {
       url: "/user/logout", 
       method: "POST",
     });
-    await localStorage.removeItem("myName")
   } catch (error) {
     console.error("Error: ", error);
   }
