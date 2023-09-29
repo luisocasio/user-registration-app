@@ -12,6 +12,8 @@ import { FiLogOut } from "react-icons/fi";
 
 const Nav = () => {
   let isUserLoggedIn = useSelector((state) => state.loggedIn.login);
+  console.log("isUserLoggedIn", isUserLoggedIn)
+
   let name = localStorage.getItem("myName")
   
   const dispatch = useDispatch();
@@ -23,13 +25,7 @@ const Nav = () => {
 
   useEffect(() => {
     let isMounted = true;
-    console.log('isMounted', isMounted)
-    console.log("isUserLoggedIn:", isUserLoggedIn)
-
-    if(name && isUserLoggedIn){
-      console.log("User logged in: ", name)
-    }
-
+    console.log("isMounted",isMounted)
 
     return () => {
      console.log("Clean up")
@@ -45,7 +41,7 @@ const Nav = () => {
         </Button>
       </div>
 
-      {!isUserLoggedIn && (
+      {!name && (
         <div className={styles.navButtonsWrapper}>
           <Button type="default">
             <Link to="/register">Register</Link>
@@ -57,7 +53,7 @@ const Nav = () => {
         </div>
       )}
 
-      {name && isUserLoggedIn && (
+      {name && (
         <div className={styles.navButtonsWrapper}>
           <h1>welcome, {name}</h1> 
 
