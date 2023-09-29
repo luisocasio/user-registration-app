@@ -12,7 +12,6 @@ import { FiLogOut } from "react-icons/fi";
 
 const Nav = () => {
   let isUserLoggedIn = useSelector((state) => state.loggedIn.login);
-  console.log("isUserLoggedIn", isUserLoggedIn)
 
   let name = localStorage.getItem("myName")
   
@@ -23,9 +22,16 @@ const Nav = () => {
     dispatch(userLogOutReducer());
   };
 
+  if(name){
+    isUserLoggedIn = true
+  } else {
+    console.log("Please login...")
+  }
+
   useEffect(() => {
     let isMounted = true;
     console.log("isMounted",isMounted)
+    console.log("isUserLoggedIn", isUserLoggedIn)
 
     return () => {
      console.log("Clean up")

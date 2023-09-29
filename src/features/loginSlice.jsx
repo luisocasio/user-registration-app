@@ -13,7 +13,6 @@ const loginSlice = createSlice({
     },
     userLogOutReducer(state) {
       state.login = false;
-      localStorage.removeItem("myName")
     },
   },
 });

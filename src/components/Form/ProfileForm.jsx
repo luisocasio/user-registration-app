@@ -48,7 +48,7 @@ const ProfileForm = () => {
           width: "50%",
         }}
       >
-      <input defaultValue={name} />
+      <Input defaultValue={name} />
       </Form.Item>
       <Form.Item
         name={["user", "email"]}
